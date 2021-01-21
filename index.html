@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="novice@jihainet.com" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="./static/style.css" />
+    <link rel="stylesheet" type="text/css" href="./static/iconfont/iconfont.css" />
+    <link rel="icon" type="image/x-icon" href="./static/image/logo.ico" rel="external nofollow" />
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_1089440_aqy5l0dd8df.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_980121_ixfscko36vp.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_1185936_avacpim3czc.css">
+    
+    <!-- <link rel="stylesheet" href="./static/reset.css"> -->
+    <script src="./static/config.js"></script>
+    <script src="./static/js/ydui.flexible.js"></script>
+    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async></script>
+    <script src="https://cdn.bootcss.com/spark-md5/3.0.0/spark-md5.js"></script>
+</head>
+
+<body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+</body>
+<script>
+    mui.init({
+        keyEventBind: {
+            backbutton: true //关闭back按键监听
+        }
+    });
+    // //首页返回键处理
+    // //处理逻辑：1秒内，连续两次按返回键，则退出应用；
+    // var first = null;
+    // mui.back = function() {
+    //     //首次按键，提示  再按一次退出应用
+    //     if (!first) {
+    //         first = new Date().getTime(); //记录第一次按下回退键的时间
+    //         //            mui.toast('再按一次退出应用');//给出提示
+    //         history.go(-1) //回退到上一页面
+    //         setTimeout(function() { //1s中后清除
+    //             first = null;
+    //         }, 1000);
+    //     } else {
+    //         if (new Date().getTime() - first < 1000) { //如果两次按下的时间小于1s，
+    //             plus.runtime.quit(); //那么就退出app
+    //         }
+    //     }
+    // };
+    // (function(w, d, s, n, a, e) {
+    //     w[n] = w[n] || function() {
+    //         (w[n].z = w[n].z || []).push(arguments)
+    //     };
+    //     a = d.createElement(s), e = d.getElementsByTagName(s)[0];
+    //     a.async = 1;
+    //     a.charset = "UTF-8";
+    //     a.src = "https://pubres.aihecong.com/hecong.js";
+    //     e.parentNode.insertBefore(a, e)
+    // })(window, document, "script", "_AIHECONG");
+    function plusReady() {
+            // ......
+            // 获取本地应用资源版本号
+            plus.runtime.getProperty(plus.runtime.appid, function (inf) {
+                wgtVer = inf.version
+
+          
+               
+                // console.log('当前应用版本：' + wgtVer)
+                // console.log(wgtVer)
+                  
+
+                checkUpdate()
+            })
+        }
+
+        if (window.plus) {
+            plusReady()
+        } else {
+            document.addEventListener('plusready', plusReady, false)
+        }
+        //    获取本地的软件版本号 end
+        // 检测更新 starthttps://newtl.mac.9thm.cn/index/
+        // var checkUrl = 'https://newnew.9thm.cn/index/login/checkvision'
+        var checkUrl = 'http://eurapi.eur.jiujiutc.com/api.html'
+       
+        
+        
+        function checkUpdate() {
+            var apiAuth = localStorage.getItem('user_token')
+            // plus.nativeUI.showWaiting('检测更新...')
+            var xhr = new XMLHttpRequest()
+            xhr.onreadystatechange = function () {
+                switch (xhr.readyState) {
+                    case 4:
+                        plus.nativeUI.closeWaiting()
+                        if (xhr.status == 200) {
+                            console.log('检测更新成功：' + xhr.responseText)
+                            var newVer = JSON.parse(xhr.responseText).data.app_edition
+                            console.log(newVer+'新版本号')
+                            var iosUrl = JSON.parse(xhr.responseText).data.app_ipa
+                            console.log('ios下载链接'+ iosUrl)
+                            var androidUrl = JSON.parse(xhr.responseText).data.app_apk
+                            console.log('android下载链接'+ androidUrl)
+                            // var onloadUrl = JSON.parse(xhr.responseText).vision.url
+                            if (wgtVer && newVer && (wgtVer  != newVer)) {
+                                plus.nativeUI.confirm('有新版，前往去下载', function (e) {
+                                    console.log(e.index+'e.index')
+                                    if (e.index == 1) {
+                                        // plus.runtime.quit()
+                                        // downloadWgt()
+                                    }
+                                    if (e.index == 0) {
+                                        // plus.runtime.openURL(onloadUrl)
+                                        var u = navigator.userAgent;
+                                        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+                                        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+
+                                        console.log('-----')
+
+                                        console.log(androidUrl)
+                                        if(isAndroid){
+                                           // downloadWgt(androidUrl)    
+                                            
+                                            plus.runtime.openURL('http://eurapi.eur.jiujiutc.com/app/index.html')
+                                           
+                                        }else if(isiOS){
+                                            plus.runtime.openURL('http://eurapi.eur.jiujiutc.com/app/index.html')
+                                        }
+                                        // downloadWgt()                                            
+                                        // plus.runtime.quit()
+                                    }
+                                    if (e.index == -1) {
+                                        plus.runtime.quit()
+                                    }
+                                })
+                            } else {
+                                localStorage.setItem('apiauth', apiAuth)
+                                //plus.nativeUI.alert('无新版本可更新！')
+                            }
+                        } else {
+                            // plus.nativeUI.alert('检测更新失败,软件3秒后自动关闭')
+                            // localStorage.removeItem('apiauth')
+                            // setTimeout(() => {
+                            //     plus.runtime.quit();
+                            // }, 3000)
+                        }
+                        break
+                    default:
+                        break
+                }
+            }
+            xhr.open('POST', checkUrl)
+            xhr.send('method=user.app_edition')
+        }
+        
+        // 下载wgt方法
+        function downloadWgt (){
+            // 更新文件 wgt 文件地址
+            var wgtUrl = "http://eurapi.eur.jiujiutc.com/app/app/eur.apk";
+            console.log(wgtUrl)
+            plus.nativeUI.showWaiting("正在更新...");
+            plus.downloader.createDownload( wgtUrl, {filename:"_doc/update/"}, function(d,status){
+            if ( status == 200 ) {
+                console.log("下载wgt成功："+d.filename);
+                installWgt(d.filename); // 安装wgt方法
+            } else {
+                console.log("下载wgt失败！");
+                plus.nativeUI.alert("下载wgt失败！");
+            }
+            plus.nativeUI.closeWaiting();
+        }).start();
+        }
+        // 安装wgt方法
+        function installWgt(path) {
+            plus.nativeUI.showWaiting("安装wgt文件...");
+            plus.runtime.install(path,{},function(){
+                plus.nativeUI.closeWaiting();
+                console.log("安装wgt文件成功！");
+                plus.nativeUI.alert("应用资源更新完成！",function(){
+                    plus.runtime.restart();
+                });
+            },function(e){ 
+                plus.nativeUI.closeWaiting();
+                console.log("安装wgt文件失败["+e.code+"]："+e.message);
+                plus.nativeUI.alert("安装wgt文件失败["+e.code+"]："+e.message);
+            });
+        }
+
+</script>
+
+</html>
