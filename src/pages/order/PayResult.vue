@@ -14,7 +14,7 @@
             </div>
             <div class="paysuccess-m">
                 <!-- <p class="paysuccess-name">支付方式: {{ orderInfo.payment_name }}</p> -->
-                <p class="paysuccess-name">支付方式: QEEC支付</p>
+                <p class="paysuccess-name">支付方式: USDT支付</p>
                 <!--<p class="paysuccess-price">￥<i>666.66</i></p>-->
             </div>
             <div class="paysuccess-b">

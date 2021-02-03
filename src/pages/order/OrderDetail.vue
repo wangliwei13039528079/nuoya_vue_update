@@ -40,7 +40,7 @@
                     <p class="goods" slot="title">{{ item.addon }}</p>
                     <yd-list-other slot="other">
                         <div>
-                            <span class="demo-list-price"><em></em>{{ item.price }} QEEC</span>
+                            <span class="demo-list-price"><em></em>{{ item.price }} USDT</span>
                         </div>
                         <div>x{{ item.nums }}</div>
                     </yd-list-other>
@@ -143,7 +143,7 @@ export default {
                 }
             })
         },
-        
+
         // 查看商品详情
         goodsDetail (id) {
             this.$router.push({path: '/goodsDetail', query: {goods_id: id}})

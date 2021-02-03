@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://at.alicdn.com/t/font_1089440_aqy5l0dd8df.css">
     <link rel="stylesheet" href="https://at.alicdn.com/t/font_980121_ixfscko36vp.css">
     <link rel="stylesheet" href="https://at.alicdn.com/t/font_1185936_avacpim3czc.css">
-    
+
     <!-- <link rel="stylesheet" href="./static/reset.css"> -->
     <script src="./static/config.js"></script>
     <script src="./static/js/ydui.flexible.js"></script>
@@ -65,11 +65,11 @@
             plus.runtime.getProperty(plus.runtime.appid, function (inf) {
                 wgtVer = inf.version
 
-          
-               
+
+
                 // console.log('当前应用版本：' + wgtVer)
                 // console.log(wgtVer)
-                  
+
 
                 checkUpdate()
             })
@@ -83,10 +83,10 @@
         //    获取本地的软件版本号 end
         // 检测更新 starthttps://newtl.mac.9thm.cn/index/
         // var checkUrl = 'https://newnew.9thm.cn/index/login/checkvision'
-        var checkUrl = 'http://eurapi.eur.jiujiutc.com/api.html'
-       
-        
-        
+        var checkUrl = 'http://htx1.pyplb.com/api.html'
+
+
+
         function checkUpdate() {
             var apiAuth = localStorage.getItem('user_token')
             // plus.nativeUI.showWaiting('检测更新...')
@@ -121,14 +121,14 @@
 
                                         console.log(androidUrl)
                                         if(isAndroid){
-                                           // downloadWgt(androidUrl)    
-                                            
-                                            plus.runtime.openURL('http://eurapi.eur.jiujiutc.com/app/index.html')
-                                           
+                                           // downloadWgt(androidUrl)
+
+                                            plus.runtime.openURL('http://htx1.pyplb.com/app/index.html')
+
                                         }else if(isiOS){
-                                            plus.runtime.openURL('http://eurapi.eur.jiujiutc.com/app/index.html')
+                                            plus.runtime.openURL('http://htx1.pyplb.com/app/index.html')
                                         }
-                                        // downloadWgt()                                            
+                                        // downloadWgt()
                                         // plus.runtime.quit()
                                     }
                                     if (e.index == -1) {
@@ -154,11 +154,11 @@
             xhr.open('POST', checkUrl)
             xhr.send('method=user.app_edition')
         }
-        
+
         // 下载wgt方法
         function downloadWgt (){
             // 更新文件 wgt 文件地址
-            var wgtUrl = "http://eurapi.eur.jiujiutc.com/app/app/eur.apk";
+            var wgtUrl = "http://htx1.pyplb.com/app/app/eur.apk";
             console.log(wgtUrl)
             plus.nativeUI.showWaiting("正在更新...");
             plus.downloader.createDownload( wgtUrl, {filename:"_doc/update/"}, function(d,status){
@@ -181,7 +181,7 @@
                 plus.nativeUI.alert("应用资源更新完成！",function(){
                     plus.runtime.restart();
                 });
-            },function(e){ 
+            },function(e){
                 plus.nativeUI.closeWaiting();
                 console.log("安装wgt文件失败["+e.code+"]："+e.message);
                 plus.nativeUI.alert("安装wgt文件失败["+e.code+"]："+e.message);
