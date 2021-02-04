@@ -11,8 +11,8 @@ module.exports = merge(prodEnv, {
     //   GO_API: '"127.0.0.1:9026"',
      // GO_API: '"eurgo.sixg.vip"',
     
-     GO_API: '"eurgo.eur.jiujiutc.com"',
-     PJ_API: '"eurgo.eur.jiujiutc.com"',
+     GO_API: '"nygo.pyplb.com"',
+     PJ_API: '"nygo.pyplb.com"',
      //PJ_API: '"eurgo.sixg.vip"',
    //  PJ_API: '"127.0.0.1:9026"',
   JAVA_API: '"http://127.0.0.16:8080"'

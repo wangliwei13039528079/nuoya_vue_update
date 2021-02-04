@@ -159,11 +159,15 @@
                     <img src="../../common/images/shop.png">
                     <span>商城</span>
                 </div> -->
+                <div class="menu-item" @click="goTo('/user')">
+                    <img src="../../common/images/up.png">
+                    <span>订单</span>
+                </div>
 
-         <div class="menu-item" @click="applyStore()">
+         <!-- <div class="menu-item" @click="applyStore()">
         <img src="../../common/images/up.png">
         <span>申请商家</span>
-      </div>
+      </div> -->
                 <!-- <div class="menu-item" v-if="userinfo && (userinfo.merchant == 0 || userinfo.merchant == 3)" @click="applyStore()">
                     <img src="../../common/images/up.png">
                     <span>申请商家</span>
