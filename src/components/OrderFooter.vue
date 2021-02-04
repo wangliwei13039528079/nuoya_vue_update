@@ -1,7 +1,7 @@
 <template>
     <div class="orderfooter">
         <div class="orderfooter-left">
-            <p>需付：</p><span>{{ this.GLOBAL.formatMoney(amount, 2, '') }} QEEC</span>
+            <p>需付：</p><span>{{ this.GLOBAL.formatMoney(amount, 2, '') }} USDT</span>
         </div>
         <div class="orderfooter-right">
             <yd-button type="danger" @click.native="pay">立即支付</yd-button>

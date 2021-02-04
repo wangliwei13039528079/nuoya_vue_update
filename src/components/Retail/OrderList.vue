@@ -7,7 +7,7 @@
                 <p class="goods" slot="title">{{ spes_desc }}</p>
                 <yd-list-other slot="other">
                     <div>
-                        <span class="demo-list-price"><em></em>{{ price }} QEEC</span>
+                        <span class="demo-list-price"><em></em>{{ price }} USDT</span>
                     </div>
                     <div>x{{ nums }}</div>
                 </yd-list-other>

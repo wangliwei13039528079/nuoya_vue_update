@@ -10,14 +10,14 @@
             :price="resData.price"
             :nums="num"
         ></orderlist>
-        
+
         <!-- <orderfooter
             :amount="products.price"
             @payment="payment"
         ></orderfooter> -->
         <div class="orderfooter">
             <div class="orderfooter-left">
-                <p>需付：</p><span>{{ Number(resData.price).toFixed(2)*this.num }} QEEC</span>
+                <p>需付：</p><span>{{ Number(resData.price).toFixed(2)*this.num }} USDT</span>
             </div>
             <div class="orderfooter-right">
                 <yd-button type="danger" @click.native="pay">立即支付</yd-button>
@@ -50,16 +50,16 @@ export default {
         this.getCartList()
         this.userDefaultShip()
     },
-   
+
     methods: {
-       
+
         // 获取商品信息
         getCartList () {
 
             this.$api.selfSupportGoodsDetail({goods_id:this.id}, res => {
                 if (res.status) {
                     this.resData = res.data
-                } 
+                }
             })
         },
         // 获取用户的默认收货地址
@@ -78,8 +78,8 @@ export default {
             this.shipInfo = val
             this.area_id = val.id
         },
-        
-        
+
+
         //  创建订单
        pay() {
            if(!this.flag) {
@@ -98,7 +98,7 @@ export default {
                     this.$router.replace({path:'/MerchantPayOrder',query:{orderId:res.data.order_num,total:res.data.points,id:res.data.id}})
                 }
             })
-           
+
        }
     },
     watch: {
@@ -130,7 +130,7 @@ export default {
 	.yd-popup .yd-tab-nav:after{
 		background-image: none;
 	}
-    
+
     .ordercoupon-content {
         background-color: #000;
     }

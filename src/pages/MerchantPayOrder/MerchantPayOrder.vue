@@ -7,7 +7,7 @@
             </yd-cell-item>
             <yd-cell-item>
                 <span slot="left">订单金额</span>
-                <span slot="right">{{ order_amount }} QEEC</span>
+                <span slot="right">{{ order_amount }} USDT</span>
             </yd-cell-item>
         </yd-cell-group>
         <div class="payment" v-for="(item,index) in pays" @click="isshow=true,showKeyboard=true,type=item.type" :key="index">
@@ -17,7 +17,7 @@
             </div>
             <img class="right-img" src="../../../static/image/right.png"/>
         </div>
-        
+
         <!-- <payment :payments="payments" @pay="pay" :user="userInfo"></payment> -->
         <!-- <div class="btn" @click="isshow=true,showKeyboard=true">
             确认支付
@@ -85,7 +85,7 @@ export default {
         this.getUserMoney()
     },
     methods: {
-        
+
         // 获取订单详情
         orderDetail () {
             this.$api.selfSupportGoodsDetail({goods_id: this.id}, res => {
@@ -113,7 +113,7 @@ export default {
                     if(!res.status) {
                         this.$dialog.toast({mes:res.msg,timeout:1000})
                     }
-                    
+
                     if(res.status){
                         this.pay()
                     }
@@ -140,7 +140,7 @@ export default {
                     })
                     this.flag = true
                 }
-                
+
                 if(res.status) {
                     setTimeout(()=>{
                         this.$router.replace({path:'/MerchantAllOrder',query:{tab:2}})
@@ -156,8 +156,8 @@ export default {
             })
         },
 
-        
-	    
+
+
         // 支付完后点击跳转
         completed () {
             this.popShow = false // 关闭弹窗
@@ -169,7 +169,7 @@ export default {
             this.$router.replace({path: '/cashierdesk', query: {order_id: this.orderId}})
         }
     },
-    
+
 }
 </script>
 

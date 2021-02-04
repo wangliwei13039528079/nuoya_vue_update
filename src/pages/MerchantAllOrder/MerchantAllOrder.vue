@@ -18,7 +18,7 @@
                                 <!-- <p class="goods" slot="title">{{ 7777}}</p> -->
                                 <yd-list-other slot="other">
                                     <div>
-                                        <span class="demo-list-price"><em></em>{{ item.price }} QEEC</span>
+                                        <span class="demo-list-price"><em></em>{{ item.price }} USDT</span>
                                     </div>
                                     <div>x{{ item.number }}</div>
                                 </yd-list-other>
@@ -27,7 +27,7 @@
                         <div class="order-content-footer">
                             <div class="footer-top">
                                 <p class="footer-top-left">共计 {{item.number }} 件商品</p>
-                                <p class="footer-top-right">合计：{{ item.points }} QEEC</p>
+                                <p class="footer-top-right">合计：{{ item.points }} USDT</p>
                             </div>
                             <div class="footer-bottom" v-if="item.status === 0">
                                 <yd-button type="hollow" shape="circle" class="right-btn" @click.native="pay(item.id,item.order_num,item.points)">立即付款</yd-button>
@@ -120,7 +120,7 @@ export default {
                     page: 1,
                     status: 4
                 }
-                
+
             ],
             showLogistics: false, // 是否显示物流窗口
             logisticsInfo: [], // 物流信息
@@ -233,7 +233,7 @@ export default {
         onDelete() {
             this.value = this.value.slice(0, this.value.length - 1);
         },
-       
+
     },
     watch: {
         intTab () {
@@ -263,7 +263,7 @@ export default {
     }
     .yd-tab-box {
         background-color: #000 !important;
-        
+
     }
     .yd-tab-box li {
         color: #fff !important;
@@ -322,7 +322,7 @@ export default {
         transform: translateY(-50px);
         margin: 0 3%;
         width: 94%;
-    
+
     }
     .ordertab .van-number-keyboard__body {
         color: #000;

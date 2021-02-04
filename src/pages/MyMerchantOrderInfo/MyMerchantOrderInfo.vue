@@ -22,7 +22,7 @@
         </div>
         <div class="orderadd" >
             <img class="orderadd-gps" src="../../../static/image/gps.png"/>
-            
+
             <div class="orderadd-content">
                 <div class="orderadd-top">
                     <span>收货人：{{ order.user_name }}</span>
@@ -35,7 +35,7 @@
         </div>
         <!-- <div class="orderadd" v-if="order.status != 1 && order.status != 4">
             <img class="orderadd-gps" src="../../../static/image/car-green.png"/>
-            
+
             <div class="orderadd-content">
                 <div class="orderadd-top">
                     <span>物流公司：{{ order.addr_name }}</span>
@@ -53,7 +53,7 @@
                     <p class="goods" slot="title">{{  }}</p>
                     <yd-list-other slot="other">
                         <div>
-                            <span class="demo-list-price"><em></em>{{ order.price }} QEEC</span>
+                            <span class="demo-list-price"><em></em>{{ order.price }} USDT</span>
                         </div>
                         <div>x{{ order.number }}</div>
                     </yd-list-other>
@@ -69,7 +69,7 @@
         </div>
         <yd-cell-item>
             <span slot="left">订单价格</span>
-            <span slot="right" class="demo-list-price">{{ this.GLOBAL.formatMoney(order.points, 2, '') }} QEEC</span>
+            <span slot="right" class="demo-list-price">{{ this.GLOBAL.formatMoney(order.points, 2, '') }} USDT</span>
         </yd-cell-item>
         <div class="footer">
             <yd-button type="hollow" class="right-btn" v-if="order.status == 0" @click.native="pay">立即付款</yd-button>
@@ -92,7 +92,7 @@
         @delete="onDelete"
         @blur="showKeyboard = false;isshow = false"
         />
-       
+
     </div>
 </template>
 
@@ -157,8 +157,8 @@ export default {
         afterService(){
             this.$router.push({path:'/Replacement',query:{order_id:this.order.id}})
         },
-        
-        
+
+
         // 确认收货
         confirm () {
             let orderId = this.order_id
@@ -225,7 +225,7 @@ export default {
         border: 1px solid #FF3B44;
         background-color: #000;
         color: #FF3B44;
-        
+
     }
     .footer {
         position: fixed;
@@ -285,7 +285,7 @@ export default {
         transform: translateY(-50px);
         margin: 0 3%;
         width: 94%;
-    
+
     }
     .orderdetail .van-number-keyboard__body {
         color: #000;

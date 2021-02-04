@@ -12,8 +12,8 @@
         </div>
         <div class="group-buying">
             <div class="price">
-                <h2>{{ this.GLOBAL.formatMoney(product.price, 2, '') }} QEEC</h2>
-                <p>{{ product.mktprice }} QEEC</p>
+                <h2>{{ this.GLOBAL.formatMoney(product.price, 2, '') }} USDT</h2>
+                <p>{{ product.mktprice }} USDT</p>
             </div>
             <div class="salesvolume">
                 <p>已售{{ buyCount }} {{ unit }}/剩余 {{ stock }} {{ unit }}</p>

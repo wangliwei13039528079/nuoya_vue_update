@@ -23,7 +23,7 @@
                                 <p class="goods" slot="title">{{ goods.addon }}</p>
                                 <yd-list-other slot="other">
                                     <div>
-                                        <span class="demo-list-price"><em></em>{{ goods.price }} QEEC</span>
+                                        <span class="demo-list-price"><em></em>{{ goods.price }} USDT</span>
                                     </div>
                                     <div>x{{ goods.nums }}</div>
                                 </yd-list-other>
@@ -32,7 +32,7 @@
                         <div class="order-content-footer">
                             <div class="footer-top">
                                 <p class="footer-top-left">共计 {{ item.items.length }} 件商品</p>
-                                <p class="footer-top-right">合计：{{ item.order_amount }} QEEC</p>
+                                <p class="footer-top-right">合计：{{ item.order_amount }} USDT</p>
                             </div>
                             <div class="footer-bottom" v-if="item.status === 1 && item.pay_status === 1">
                                 <yd-button type="hollow" shape="circle" class="left-btn" @click.native="showDetail(item.order_id)">查看</yd-button>
@@ -244,7 +244,7 @@ export default {
     }
     .yd-tab-box {
         background-color: #000 !important;
-        
+
     }
     .yd-tab-box li {
         color: #fff !important;

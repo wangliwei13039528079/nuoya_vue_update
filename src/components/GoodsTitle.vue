@@ -12,8 +12,8 @@
         </div>
         <div class="price-salesvolume">
             <div class="price">
-                <h2>{{ this.GLOBAL.formatMoney(product.price, 2, '') }} QEEC</h2>
-                <p>{{ product.mktprice }} QEEC</p>
+                <h2>{{ this.GLOBAL.formatMoney(product.price, 2, '') }} USDT</h2>
+                <p>{{ product.mktprice }} USDT</p>
             </div>
             <div class="salesvolume">
                 <p>销量：{{ buyCount }} {{ unit }}</p>
@@ -87,6 +87,6 @@ export default {
 }
 </script>
 <style>
-    
+
 </style>
 

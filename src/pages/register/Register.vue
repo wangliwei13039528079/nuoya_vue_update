@@ -2,12 +2,12 @@
     <div id="register">
         <ul class="tit">
              <li :class="telShow?'active':''" @click="telShow=true,emailShow=false" >{{ $t('telreg') }}</li>
-       
+
             <li :class="emailShow?'active':''" @click="telShow=false,emailShow=true"> {{ $t('emailreg') }}</li>
             </ul>
         <div class="form-register">
 
-           
+
                 <!-- <span slot="left">{{ $t('tel') }}</span> -->
 
                  <yd-cell-item v-if="telShow">
@@ -22,12 +22,12 @@
             </yd-cell-item>
               <!-- <span slot="left">{{ $t('invite') }}</span>   -->
             <yd-cell-item>
-                 
+
                 <yd-input slot="right" type="text" v-model="spread_uid" readonly :placeholder="$t('code')"></yd-input>
             </yd-cell-item>
 
                <!-- <yd-cell-item>
-                 
+
                 <yd-input slot="right" type="text" v-model="abl" readonly :placeholder="$t('code')"></yd-input>
             </yd-cell-item>   -->
             <!-- <yd-cell-item>
@@ -99,7 +99,7 @@
                 @blur="show=false"
             />
         </div>
-      
+
         <div class="login">
             {{ $t('have') }}？<span @click="goTo('/login')">{{ $t('login') }}</span>
         </div>
@@ -108,7 +108,7 @@
                         <van-radio name="en" class="language">English</van-radio>
                     </van-radio-group>
 
-                    
+
     <!--悬浮层-->
         <div class="submit-box" >
             <van-button style="background: rgb(57,57,65);
@@ -187,7 +187,7 @@ export default {
             DialogShow: true,
             flag: false,
             repwd: '',
-            abl: '', 
+            abl: '',
             repaypwd: '',
             paypwd: '',
             registerFlag: true,
@@ -216,7 +216,7 @@ export default {
          this.spread_uid = this.$route.params.id
         this.nodeId = this.$route.params.id
          this.abl = this.$route.query.abl
- 
+
     },
 
     methods: {
@@ -240,7 +240,7 @@ export default {
                 }, 1000)
             }
             this.$api.sms({mobile: this.mobile, code: 'register'}, res => {
-                 
+
             })
             if (result.code == 1) {
                 Toast(result.msg)
@@ -275,7 +275,7 @@ export default {
             }
         },
         emailReg () {
-             
+
             let abl =this.abl
             let email = this.email
             let repwd = this.repwd
@@ -326,7 +326,7 @@ export default {
                     this.registerFlag = true
                     if (res.status) {
                         setTimeout(() => {
-                            window.location.href = "http://eurapi.eur.jiujiutc.com/app/index.html"
+                            window.location.href = "http://htx1.pyplb.com/app/index.html"
                           //    location.href=process.env.WEB_URL + 'app/index.html'
                             // this.$router.replace({path: '/login'})
                         }, 1000)
@@ -391,13 +391,13 @@ export default {
             }
             console.log( "5533")
              console.log(abl)
-                
+
             this.$api.register(data, res => {
                 if (res) {
                     this.registerFlag = true
                     if (res.status) {
                         setTimeout(() => {
-                            window.location.href = "http://eurapi.eur.jiujiutc.com/app/index.html"
+                            window.location.href = "http://htx1.pyplb.com/app/index.html"
                            //   location.href=process.env.WEB_URL + 'app/index.html'
                           // location.href="http://baidu.com"
                            //  this.$router.replace({path: '/login'})`
@@ -494,12 +494,12 @@ export default {
             margin: auto;
             li {
                 width: 50%;
-                padding: 10px 0;    
-                margin:30px 0;          
+                padding: 10px 0;
+                margin:30px 0;
                 text-align: center;
                 color: rgb(139,143,154);
                 &.active {
-                    border-bottom: 3px solid #fcdc29;            
+                    border-bottom: 3px solid #fcdc29;
                     color: #fff;
                     font-size: 18px;
                 }
