@@ -176,13 +176,13 @@
                     <img src="../../common/images/shop.png">
                     <span>商户管理</span>
                 </div> -->
-                <div class="menu-item" @click="goTo('/OTCDeal/OTCBuy')">
+                <!-- <div class="menu-item" @click="goTo('/OTCDeal/OTCBuy')">
                     <img src="../../common/images/f.png">
                     <span>OTC交易</span>
-                </div>
+                </div> -->
                 <div class="menu-item" @click="goTo('/kjpage')">
                     <img src="../../common/images/f.png">
-                    <span>EOT认购</span>
+                    <span>NEBC认购</span>
                 </div>
                 <!-- <div class="menu-item" @click="goToT('/key')">
                     <i class="iconfont iconicon-chakansiyue"></i>

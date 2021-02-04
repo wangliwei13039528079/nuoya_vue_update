@@ -61,8 +61,8 @@ export default {
         return {
          
             tab: [
-                {title: this.$t('home'), link: '/msite', type: 'static/image/shou.png', types: 'static/image/shou1.png', active: false},
-                 {title: this.$t('Intelligentminer'), link: '/breed', type: 'static/image/dappTab.png', types: 'static/image/dappTab1.png', active: false},
+                {title: this.$t('home'), link: '/msiteb', type: 'static/image/shou.png', types: 'static/image/shou1.png', active: false},
+               //  {title: this.$t('Intelligentminer'), link: '/dapp', type: 'static/image/dappTab.png', types: 'static/image/dappTab1.png', active: false},
                 {title: this.$t('wallet'), link: '/CashAssets', type: 'static/image/qianbao.png', types: 'static/image/qianbao1.png', active: true},
                 //  {title: '精品', link: '/breed', type: 'static/image/dappTab.png',types: 'static/image/dappTab.png', active: false},
                 // {title: '币币交易', link: '/treaty', type: 'iconfont iconbibijiaoyi1', active: false},
@@ -96,8 +96,10 @@ export default {
       
         '$route' () {
               this.tab= [
-                {title: this.$t('home'), link: '/msite', type: 'static/image/shou.png', types: 'static/image/shou1.png', active: false},
-                 {title: this.$t('Intelligentminer'), link: '/breed', type: 'static/image/dappTab.png', types: 'static/image/dappTab1.png', active: false},
+                {title: this.$t('home'), link: '/msiteb', type: 'static/image/shou.png', types: 'static/image/shou1.png', active: false},
+                    {title: this.$t('Intelligentminer'), link: '/dapp', type: 'static/image/dappTab.png', types: 'static/image/dappTab1.png', active: false},
+                
+               //  {title: this.$t('Intelligentminer'), link: '/breed', type: 'static/image/dappTab.png', types: 'static/image/dappTab1.png', active: false},
                 {title: this.$t('wallet'), link: '/CashAssets', type: 'static/image/qianbao.png', types: 'static/image/qianbao1.png', active: true},
                 //  {title: '精品', link: '/breed', type: 'static/image/dappTab.png',types: 'static/image/dappTab.png', active: false},
                 // {title: '币币交易', link: '/treaty', type: 'iconfont iconbibijiaoyi1', active: false},

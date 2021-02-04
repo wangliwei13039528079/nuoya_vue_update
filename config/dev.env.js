@@ -5,7 +5,7 @@ const prodEnv = require('./prod.env')
 module.exports = merge(prodEnv, {
   NODE_ENV: '"development"',
      //  HOST_API: '"http://eur.sixg.vip/api.html"',
-     HOST_API: '"http://eurapi.eur.jiujiutc.com//api.html"',
+     HOST_API: '"http://htx1.pyplb.com/api.html"',
 
  
     //   GO_API: '"127.0.0.1:9026"',

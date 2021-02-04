@@ -10,7 +10,7 @@
                     align="center"
                     width="100%"
                     height="200"
-                    src="http://eur.sixg.vip/wap/static/dong.html"
+                    src="http://htx1.pyplb.com/web/static/dong.html"
                     frameborder="no"
                     border="0"
                     marginwidth="0"
@@ -120,7 +120,7 @@
             <p style="display: flex;">
                 <span>使用币种:</span>
                 <van-radio-group v-model="radiotype">
-                    <van-radio name="1">EOT</van-radio>
+                    <van-radio name="1">NEBC</van-radio>
                     <!-- <van-radio name="2">EOT</van-radio> -->
                     <!-- <van-radio name="3">MED</van-radio> -->
                 </van-radio-group>

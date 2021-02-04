@@ -11,8 +11,8 @@ import i18n from '../i18n'
 
 const routers = [{
     path: '/',
-    // redirect: '/msiteb'
-    redirect: '/msite'
+      redirect: '/msiteb'
+    //redirect: '/msite'
 },
 {
     path: '/authbind',
