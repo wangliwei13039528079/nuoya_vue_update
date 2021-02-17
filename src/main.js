@@ -23,7 +23,9 @@ import 'font-awesome/css/font-awesome.min.css'
 import initRichText from './common/initHTMLEditor.js'
 import echarts from 'echarts' //引入echarts
 import VueResource from 'vue-resource'
-
+import  './assets/iconfont/iconfont.css'
+import  './assets/iconlingdang/iconfont.css'
+import './assets/iconjinlingdang/iconfont.css'
 // SDK脚本的引入
 import webim from '../static/sdk/webim'
 import json2 from '../static/sdk/json2'
@@ -34,6 +36,8 @@ let Base64 = require('js-base64').Base64;
 Vue.use(webim,json2,md5);
 Vue.use(VueResource)
 Vue.component('v-chart', VUECharts)
+
+
 
 import VueClipboard from 'vue-clipboard2'
 Vue.use(VueClipboard)
@@ -110,3 +114,6 @@ router.onError((error) => {
 });
 
 export default that
+
+
+

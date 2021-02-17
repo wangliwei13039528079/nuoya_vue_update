@@ -16,7 +16,6 @@
                 </div> -->
                  <!-- <div class="info-box1" v-if="!userinfo.level2"   >
                    <p><span> {{ $t('ordinary') }}  </span></p>
-
                 </div> -->
 
                   <!-- <p>级别：<span>{{userMsg.vip}}钻 （{{dealer}}）</span></p>  -->
@@ -217,19 +216,15 @@
 import {Dialog, Toast} from 'vant'
 import Vue from 'vue'
 import {mapState} from 'vuex'
-
 import {
     applyDealer
 } from '../../common/apigo'
-
 Vue.use(Dialog)
 Vue.use(Toast)
-
 export default {
     components: {
         // HeaderTop
     },
-
     data () {
         return {
             dataList: [
@@ -254,7 +249,6 @@ export default {
         window.onresize = () => {
             this.myChart.resize()
         }
-
         this.getTotal()
         this.getNum()
     },
@@ -308,7 +302,6 @@ export default {
                 ]
             })
         },
-
         applyStore () {
             let that = this
             Dialog.confirm({
@@ -360,10 +353,8 @@ export default {
                     formatter: (name) => { // 用来格式化图例文本，支持字符串模板和回调函数两种形式。模板变量为图例名称 {name}
                         return name
                     }
-
                 },
                 color:['#eec67f','#00857c','#49a6ff','#bae0e3','#cc9299','#7a3db2'],
-
                 title: [{
                     text: this.text,
                     left: '73%',
@@ -371,27 +362,22 @@ export default {
                     textAlign: 'center',
                     textBaseline: 'middle'
                 }],
-
                 series: [
                     {
                         name: '访问来源',
                         type: 'pie',
                         radius: ['50%', '70%'],
                         center: ['75%', '50%'],
-
                         label: {
                             normal: {
                                 show: false
                             }
-
                         },
-
                         data: this.dataList
                     }
                 ]
             })
         },
-
         showD () {
             Dialog.alert({
                 message: '客服QQ：8800001'
@@ -421,7 +407,6 @@ export default {
                     for (let i = 0; i < this.dataList.length; i++) {
                         this.dataList[i].name += `  (${this.dataList[i].value})`
                     }
-
                     // this.initChart()
                     this.$nextTick(() => {
                         this.initChart()
@@ -429,11 +414,9 @@ export default {
                 }
             })
         },
-
         go () {
             this.$dialog.toast({mes: '您的级别不够', timeout: 1000})
         },
-
         goTo (path) {
             if (this.rob.status == 0) {
                 this.$dialog.toast({mes: this.rob.eosv_msg, timeout: 2000})
@@ -473,7 +456,6 @@ export default {
     right:.3rem;
     top:.4rem;
 }
-
 .clearfix::after {
 	content: "";
 	display: block;
@@ -513,11 +495,9 @@ export default {
         margin: 0 10px ;
         border-radius: 10px;
         color: #fff;
-
         .right {
             position: absolute;
             right: 30px;
-
             i {
                 width: 23px;
                 height: 23px;
@@ -527,26 +507,20 @@ export default {
                 color: #fff;
             }
         }
-
         .avatar {
        width: 0.96rem;
     height: 0.96rem;
-
     overflow: hidden;
-
             border-radius: 50%;
             box-sizing: border-box;
             margin-right: 10px;
             // background-color: #fff;
             color: #999;
         }
-
         .info-box {
-
             color: #fff;
             font-size: 0.3rem
         }
-
         > button {
             margin-left: 10px;
             background-color: #60adf5;
@@ -571,23 +545,18 @@ export default {
                 line-height: 50px;
             }
         }
-
         .content {
-
             .property-box {
                 // background-color: #fff;
                 padding: 10px;
-
                 > p {
                     font-size: 14px
                 }
-
                 .content-box {
                     display: flex;
                     justify-content: space-between;
                     font-size: 14px;
                     margin-top: 10px;
-
                     .left-box, .right-box {
                         flex: 1;
                         height: 70px;
@@ -599,26 +568,19 @@ export default {
                         flex-direction: column;
                         width: 50%;
                         word-wrap: break-word;
-
                         > p {
                             padding: 2px;
                         }
-
                     }
-
                     .left-box {
-
     width: 3.2rem;
     height: 1.2rem;
     border-radius: 0.1rem;
     box-shadow: 0rem 0.04rem 0.04rem rgba(0,0,0,.2);
     border: 1px solid #b7967f;
     text-align: center;
-
                     }
-
                     .right-box {
-
     width: 3.2rem;
     height: 1.2rem;
     border-radius: 0.1rem;
@@ -628,15 +590,12 @@ export default {
                     }
                 }
             }
-
             .charts {
                 margin-top: 5px;
             }
-
             .myEchart {
                 // background-color: #fff;
             }
-
             .menu-box {
                 margin-top: 15px;
                 display: flex;
@@ -646,7 +605,6 @@ export default {
                 // background-color: #fff;
                 width: 100%;
                 box-sizing: border-box;
-
                 .menu-item {
 width: 1.9rem;
     height: 1.9rem;
@@ -658,8 +616,6 @@ width: 1.9rem;
     text-align: center;
     box-shadow: 0 0.05rem 0.05rem rgba(0,0,0,.5);
     margin-bottom: 0.4rem;
-
-
                     i {
                         font-size: 31px;
                         margin-bottom: 10px;
@@ -676,7 +632,6 @@ width: 1.9rem;
     height: 0.85rem;
     margin: 0.3rem auto 0.2rem;
                     }
-
                     @keyframes myfirst
                     {
                         from {transform: rotateZ(0deg);}

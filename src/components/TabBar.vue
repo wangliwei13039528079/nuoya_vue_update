@@ -15,12 +15,12 @@
 
 <style type="text/css">
     .tabbar{
-   
+
         /* border-top: 1px solid #eee; */
         z-index: 100;
         position: fixed;
         bottom: -.5rem;
-    background: #36373f;
+    background: #FEFEFE;
     box-shadow: 0 -0.05rem 0.05rem rgba(0,0,0,.3);
     border-radius: 0.2rem;
         width: 90%;
@@ -41,17 +41,17 @@
     }
     .tabbar-item>i{
         font-size: .5rem;
-        color: #999;
+        color: red;
     }
     .tabbar-item>span{
         display: block;
-        color: #999;
+        color: red;
         height: 16px;
         line-height: 16px;
         margin:0 0 5px 0
     }
     #true>i, #true>span{
-        color: #fff;
+        color: red;
     }
 </style>
 
@@ -59,11 +59,11 @@
 export default {
     data () {
         return {
-         
+
             tab: [
-                {title: this.$t('home'), link: '/msiteb', type: 'static/image/shou.png', types: 'static/image/shou1.png', active: false},
+                {title: this.$t('home'), link: '/msiteb', type: 'static/image/update/1_19.png', types: 'static/image/shou1.png', active: false},
                //  {title: this.$t('Intelligentminer'), link: '/dapp', type: 'static/image/dappTab.png', types: 'static/image/dappTab1.png', active: false},
-                {title: this.$t('wallet'), link: '/CashAssets', type: 'static/image/qianbao.png', types: 'static/image/qianbao1.png', active: true},
+                {title: this.$t('wallet'), link: '/CashAssets', type: 'static/image/update/1_21.png', types: 'static/image/qianbao1.png', active: true},
                 //  {title: '精品', link: '/breed', type: 'static/image/dappTab.png',types: 'static/image/dappTab.png', active: false},
                 // {title: '币币交易', link: '/treaty', type: 'iconfont iconbibijiaoyi1', active: false},
                 // {title: 'OTC', link: '/OTCDeal/OTCBuy', type: 'iconfont iconotcjiaoyi-', active: false},
@@ -78,8 +78,8 @@ export default {
 
     // 首次进入页面显示页面title及选中
     mounted () {
-    
-      
+
+
         if (this.$route.meta.title) {
             document.title = this.$route.meta.title
         }
@@ -93,24 +93,24 @@ export default {
     },
     // 监听路由变化 修改选中
     watch: {
-      
+
         '$route' () {
               this.tab= [
-                {title: this.$t('home'), link: '/msiteb', type: 'static/image/shou.png', types: 'static/image/shou1.png', active: false},
-                    {title: this.$t('Intelligentminer'), link: '/dapp', type: 'static/image/dappTab.png', types: 'static/image/dappTab1.png', active: false},
-                
+                {title: this.$t('home'), link: '/msiteb', type: 'static/image/update/1_19.png', types: 'static/image/update/1_19.png', active: false},
+                    {title: this.$t('Intelligentminer'), link: '/dapp', type: 'static/image/update/1_21.png', types: 'static/image/update/1_21.png', active: false},
+
                //  {title: this.$t('Intelligentminer'), link: '/breed', type: 'static/image/dappTab.png', types: 'static/image/dappTab1.png', active: false},
-                {title: this.$t('wallet'), link: '/CashAssets', type: 'static/image/qianbao.png', types: 'static/image/qianbao1.png', active: true},
+                {title: this.$t('wallet'), link: '/CashAssets', type: 'static/image/update/1_23.png', types: 'static/image/update/1_23.png', active: true},
                 //  {title: '精品', link: '/breed', type: 'static/image/dappTab.png',types: 'static/image/dappTab.png', active: false},
                 // {title: '币币交易', link: '/treaty', type: 'iconfont iconbibijiaoyi1', active: false},
                 // {title: 'OTC', link: '/OTCDeal/OTCBuy', type: 'iconfont iconotcjiaoyi-', active: false},
                 //    {title: '商城', link: '/index', type: 'static/image/goods-cart.png',types: 'static/image/goods-cart.png', active: false},
                 //  {title: '财务', link: '/Finance', type: 'static/image/caiwu.png', types: 'static/image/caiwu1.png', active: false},
                 // {title: '矿机', link: '/Mill', type: 'iconfont iconkuangji', active: false},
-                 {title: this.$t('mine'), link: '/financenew', type: 'static/image/wo.png', types: 'static/image/wo1.png', active: false}
+                 {title: this.$t('mine'), link: '/financenew', type: 'static/image/update/1_25.png', types: 'static/image/update/1_25.png', active: false}
 
             ]
-              
+
             for (let k in this.tab) {
                 if (this.tab[k].link === this.$route.path) {
                     this.tab[k].active = true

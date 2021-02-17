@@ -572,7 +572,7 @@ const routers = [{
     // 整合添加页面财务
 {
     path: '/Msite',
-    component: resolve => require(['../pages/Msite/Msite'], resolve),
+    component: resolve => require(['../pages/Msite/Index'], resolve),
     meta: {
         // showFooter: true,
         title: '首页',
@@ -582,7 +582,7 @@ const routers = [{
 },
 {
     path: '/Msiteb',
-    component: resolve => require(['../pages/Msite/Msiteb'], resolve),
+    component: resolve => require(['../pages/Msite/Indexb'], resolve),
     meta: {
         // showFooter: true,
         title: '首页',
@@ -627,7 +627,7 @@ const routers = [{
     // },
 {
     path: '/CashAssets',
-    component: resolve => require(['../pages/CashAssets/CashAssets'], resolve),
+    component: resolve => require(['../pages/CashAssets/OwnFinace'], resolve),
     meta: {
         // showFooter: false,
         // navShow: true,
@@ -1218,7 +1218,7 @@ const routers = [{
 },
 {
     path: '/Dapp',
-    component: resolve => require(['../pages/Dapp/Dapp'], resolve),
+    component: resolve => require(['../pages/Dapp/ecology'], resolve),
     meta: {
         // navShow: true,
         tabShow: true,
@@ -1844,7 +1844,7 @@ const routers = [{
 
 {
     path: '/financenew',
-    component: resolve => require(['../pages/Finance/FinanceNew'], resolve),
+    component: resolve => require(['../pages/Finance/FinanceUpdate'], resolve),
     name: 'financenew',
     meta: {
         title: '我的',

@@ -77,7 +77,8 @@
     "attest":"店铺认证",
     "guarantee":"担保交易",
     "wallet":"钱包",
-    "assets":"现货资产",
+    "assets":"总资产",
+    "owner":"我的",
     "convert":"折合",
     "rechargeCoin":"充币",
     "withdraw":"提币",
@@ -212,7 +213,7 @@
     "code":"介绍人邀请码",
     "inode":"介绍人节点ID",
     "projectIntroduct":"最新公告",
-     
+
     "combination":"登录密码:英文数字组合",
     "repwd":"确认密码",
     "reloginpwd":"请确认登录密码",
@@ -309,7 +310,7 @@
     "InvestmentAmount":"投资金额",
     "ForecastArder":"预测下单",
     "ForecastSettlement":"预测结算",
-    "Intelligentminer": "智能应用",
+    "Intelligentminer": "生态",
     "StarStar": "钻",
     "SignIn": "签到",
     "SignInok": "已签到",
